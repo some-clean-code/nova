@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import { env } from '../app/env.ts'
-import { cn } from '../lib/cn.ts'
 
 type NavItem = {
   to: string
@@ -24,7 +23,7 @@ export function Navbar() {
             <NavLink
               key={link.to}
               to={link.to}
-              className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}
+              className={({ isActive }) => (isActive ? 'nav-link nav-link-active' : 'nav-link')}
             >
               {link.label}
             </NavLink>
