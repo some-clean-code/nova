@@ -15,12 +15,11 @@ const products = [
 
 export function ProductsPage() {
   return (
-    <section className="stack">
-      <span className="eyebrow">Products</span>
-      <h1>Built for every stage.</h1>
+    <section className="stack products-page">
+      <h1 className="page-title">Products</h1>
       <div className="product-grid">
         {products.map((product) => (
-          <article key={product.name} className="card">
+          <article key={product.name} className="product-card">
             <h2>{product.name}</h2>
             <p>{product.description}</p>
           </article>
