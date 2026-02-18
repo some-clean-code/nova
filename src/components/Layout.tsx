@@ -1,20 +1,15 @@
-import type { JSX } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
+import { Footer } from './Footer.tsx'
+import { Navbar } from './Navbar.tsx'
 
-export default function Layout(): JSX.Element {
+export default function Layout() {
   return (
-    <div className="layout-container">
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
-      
-      <main>
-        {/* React Router will inject Home or About here */}
+    <div className="app-shell">
+      <Navbar />
+      <main className="container page-content">
         <Outlet />
       </main>
-
-      <footer>© 2026 Professional Setup</footer>
+      <Footer />
     </div>
-  );
+  )
 }
